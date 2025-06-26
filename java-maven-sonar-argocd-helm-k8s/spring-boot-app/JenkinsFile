@@ -52,6 +52,7 @@ pipeline {
             GIT_USER_NAME = "sushanthganjala"
         }
         steps {
+            checkout scm
             withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                 sh '''
                     git config user.email "sushanthganjala@gmail.com"
